@@ -57,7 +57,7 @@ def AlrAcc():
 def Finish():
   print("Welcome...")
   time.sleep(3)
-  # Go into next step
+  import mainmenu
 
 if Username == "" and Password == "":
   AlrAcc()
