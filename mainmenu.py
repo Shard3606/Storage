@@ -26,10 +26,10 @@ def CreateList():
     print('\n')
     while True:
         ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
-        ListNumber.append(input("How many of this object do you currently have?"))
         if ListText.count("Quit") > 0:
             ListText.remove("Quit")
             break
+        ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == ["ListName", "ListText"]:
         List1[1] = str(TempListName)
         List1[2] = str(ListText)
