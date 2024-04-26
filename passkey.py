@@ -43,3 +43,4 @@ while UL == 0:
             print("Enter valid option")
 
 print("Welcome to St0rage")
+import mainmenu.py
