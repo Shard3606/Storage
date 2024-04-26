@@ -1,67 +1,45 @@
-import time
-Username = ""
-Password = ""
-UsernameGuess = ""
-PasswordGuess = ""
-AlreadyAccount = ""
+UL = 0
 
-def createaccount():
-  global Username
-  global Password
-  Username = input("Please create a username, or input 'Back' to go back.")
-  if Username == "Back":
-    AlrAcc()
-  else:
-    #Save Username
-    Password = input("Please create a password, or input 'Back' to go back.")
-  if Password == "Back":
-    AlrAcc()
-  else:
-    #Save Password, attach to username
-    time.sleep(3)
-    AlrAcc()
+def signup():
+    name = input("Please make a username: ")
 
-def signintoaccount():
-  global Username
-  global Password
-  global UsernameGuess
-  global PasswordGuess
-  UsernameGuess = input("Please input your username, or input 'Back' to go back.")
-  if UsernameGuess == "Back":
-    AlrAcc()
-  else:
-    PasswordGuess = input("Please input your password, or input 'Back' to go back.")
-  if Password == "Back":
-    AlrAcc()
-  else:
-    #Check Database
-    if UsernameGuess == Username and PasswordGuess == Password:
-      Finish()
-      time.sleep(3)
+    print ("Your username has been created and is", name, ".")
+
+    password = input("Now please create a password: ")
+
+    file = open("Login.txt","a")
+    file.write (name)
+    file.write (",")
+    file.write (password)
+    file.write("\n")
+    file.close()
+
+    print ("Your login details have been saved. ")
+
+def login(file_path):
+    global UL
+    name = input("Enter your username: ")
+    password = input("Enter your password: ")
+    user = name + "," + password
+    with open(file_path, 'r') as file:
+        # read all content of a file
+        content = file.read()
+        # check if string present in a file
+        if user in content:
+            print("Logged in")
+            UL = 1
+        else:
+            print("Please create an account")
+
+while UL == 0:
+    LS = input("Would you like to (L)ogin or (S)ign Up?: ")
+    if LS == "l" or LS == "L":
+            login("Login.txt")
+            if UL == 1:
+                break
+    elif LS == "s" or LS == "S":
+            signup()
     else:
-      print("Incorrect username or password. Please try again.")
-      time.sleep(3)
-      signintoaccount()
+            print("Enter valid option")
 
-def AlrAcc():
-  AlreadyAccount = input("Do you already have an account? Input Y for yes and N for no.")
-  if AlreadyAccount == "Y":
-    signintoaccount()
-  elif AlreadyAccount == "N":
-    createaccount()
-  else:
-    print("Please make sure you inputted Y or N.")
-    time.sleep(3)
-    AlrAcc()
-
-def Finish():
-  print("Welcome...")
-  time.sleep(3)
-  import mainmenu
-
-if Username == "" and Password == "":
-  AlrAcc()
-else:
-  signintoaccount()
-
-AlrAcc()
+print("Welcome to St0rage")
