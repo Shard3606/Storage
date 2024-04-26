@@ -1,11 +1,16 @@
 import time
 Lists = []
 Selection = ""
-List1 = ["ListName", "ListText"]
-List2 = ["ListName", "ListText"]
-List3 = ["ListName", "ListText"]
-List4 = ["ListName", "ListText"]
-List5 = ["ListName", "ListText"]
+List1 = ("")
+List1Number = ["ListNumber"]
+List2 = ("ListName")
+List2Number = ["ListNumber"]
+List3 = ("ListName")
+List3Number = ["ListName"]
+List4 = ("ListName")
+List4Number = ["ListName"]
+List5 = ("ListName")
+List5Number = ["ListName"]
 
 def CreateList():
     global List1
@@ -13,6 +18,11 @@ def CreateList():
     global List3
     global List4
     global List5
+    global List1Number
+    global List2Number
+    global List3Number
+    global List4Number
+    global List5Number
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
@@ -30,9 +40,9 @@ def CreateList():
             ListText.remove("Quit")
             break
         ListNumber.append(input("How many of this object do you currently have?"))
-    if List1 == ["ListName", "ListText"]:
-        List1[1] = str(TempListName)
-        List1[2] = str(ListText)
+    if List1 == (""):
+        List1 = str(TempListName)
+        List1Number = ListText
         print("Saving List...")
     elif List2 == ["ListName", "ListText"]:
         List2[1] = str(TempListName)
