@@ -45,20 +45,20 @@ def CreateList():
         List1Number = ListText
         print("Saving List...")
     elif List2 == ["ListName", "ListText"]:
-        List2[1] = str(TempListName)
-        List2[2] = str(ListText)
+        List2 = str(TempListName)
+        List2Number = ListText
         print("Saving List...")
     elif List3 == ["ListName", "ListText"]:
-        List3[1] = str(TempListName)
-        List3[2] = str(ListText)
+        List3 = str(TempListName)
+        List3Number = ListText
         print("Saving List...")
     elif List4 == ["ListName", "ListText"]:
-        List4[1] = str(TempListName)
-        List4[2] = str(ListText)
+        List4 = str(TempListName)
+        List4Number = ListText
         print("Saving List...")
     elif List5 == ["ListName", "ListText"]:
-        List5[1] = str(TempListName)
-        List5[2] = str(ListText)
+        List5 = str(TempListName)
+        List5Number = ListText
         print("Saving List...")
     else:
         print("Out of space, please delete a List to continue.")
@@ -73,6 +73,11 @@ def EditList():
     global List3
     global List4
     global List5
+    global List1Number
+    global List2Number
+    global List3Number
+    global List4Number
+    global List5Number
     List1[1] = List1Name
     List2[1] = List2Name
     List3[1] = List3Name
