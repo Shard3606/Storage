@@ -65,7 +65,7 @@ def CreateList():
     #Save List Text to Database
     time.sleep(3)
     Welcome()
-
+"""
 def EditList():
     global ListList
     global List1
@@ -78,11 +78,11 @@ def EditList():
     global List3Number
     global List4Number
     global List5Number
-    List1[1] = List1Name
-    List2[1] = List2Name
-    List3[1] = List3Name
-    List4[1] = List4Name
-    List5[1] = List5Name
+    List1 = List1Name
+    List2 = List2Name
+    List3 = List3Name
+    List4 = List4Name
+    List5 = List5Name
     if List1 != ["ListName", "ListText"]:
         print(List1[1])
     if List2 != ["ListName", "ListText"]:
@@ -243,7 +243,7 @@ def DeleteList():
     Welcome()
     time.sleep(3)
     Welcome()
-
+"""
 def Logout():
     print("Come back soon!")
     time.sleep(3)
