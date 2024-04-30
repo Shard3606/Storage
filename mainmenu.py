@@ -44,19 +44,19 @@ def CreateList():
         List1 = str(TempListName)
         List1Number = ListText
         print("Saving List...")
-    elif List2 == ["ListName", "ListText"]:
+    elif List2 == (""):
         List2 = str(TempListName)
         List2Number = ListText
         print("Saving List...")
-    elif List3 == ["ListName", "ListText"]:
+    elif List3 == (""):
         List3 = str(TempListName)
         List3Number = ListText
         print("Saving List...")
-    elif List4 == ["ListName", "ListText"]:
+    elif List4 == (""):
         List4 = str(TempListName)
         List4Number = ListText
         print("Saving List...")
-    elif List5 == ["ListName", "ListText"]:
+    elif List5 == (""):
         List5 = str(TempListName)
         List5Number = ListText
         print("Saving List...")
@@ -77,39 +77,35 @@ def EditList():
     global List3Number
     global List4Number
     global List5Number
-    List1 = List1Name
-    List2 = List2Name
-    List3 = List3Name
-    List4 = List4Name
-    List5 = List5Name
-    if List1 != ["ListName", "ListText"]:
-        print(List1[1])
-    if List2 != ["ListName", "ListText"]:
-        print(List2[1])
-    if List3 != ["ListName", "ListText"]:
-        print(List3[1])
-    if List4 != ["ListName", "ListText"]:
-        print(List4[1])
-    if List5 != ["ListName", "ListText"]:
-        print(List5[1])
+    if List1 != (""):
+        print(List1)
+    if List2 != (""):
+        print(List2)
+    if List3 != (""):
+        print(List3)
+    if List4 != (""):
+        print(List4)
+    if List5 != (""):
+        print(List5)
     ListSelection = input("Please input the name of the List you would like to edit, or input 'Back' to go back.")
-    if ListSelection == List1Name:
-        NewText = input(List1[2])
-        List1[2] = NewText
-    elif ListSelection == List2Name:
-        NewText = input(List2[2])
-        List2[2] = NewText
-    elif ListSelection == List3Name:
-        NewText = input(List3[2])
-        List3[2] = NewText
-    elif ListSelection == List4Name:
-        NewText = input(List4[2])
-        List4[2] = NewText
-    elif ListSelection == List5Name:
-        NewText = input(List5[2])
-        List5[2] = NewText
+    if ListSelection == List1:
+        TextorNumber = input("Would you like to")
+        NewText = input(List1Number)
+        List1Number = NewText
+    elif ListSelection == List2:
+        NewText = input(List2Number)
+        List2Number = NewText
+    elif ListSelection == List3:
+        NewText = input(List3Number)
+        List3Number = NewText
+    elif ListSelection == List4:
+        NewText = input(List4Number)
+        List4Number = NewText
+    elif ListSelection == List5:
+        NewText = input(List5Number)
+        List5Number = NewText
     elif ListSelection == "Back":
-        Continue = ""
+        Welcome()
     else:
         print("Please make sure to write one of the valid List names.")
         time.sleep(3)
