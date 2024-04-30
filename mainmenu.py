@@ -88,6 +88,11 @@ def EditList():
     global List3Number
     global List4Number
     global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     if List1 != (""):
         print(List1)
     if List2 != (""):
@@ -134,11 +139,16 @@ def ViewList():
     global List3
     global List4
     global List5
-    List1[1] = List1Name
-    List2[1] = List2Name
-    List3[1] = List3Name
-    List4[1] = List4Name
-    List5[1] = List5Name
+    global List1
+    global List2
+    global List3
+    global List4
+    global List5
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     if List1 != ["ListName", "ListText"]:
         print(List1[1])
     if List2 != ["ListName", "ListText"]:
@@ -183,11 +193,16 @@ def DeleteList():
     global List3
     global List4
     global List5
-    List1[1] = List1Name
-    List2[1] = List2Name
-    List3[1] = List3Name
-    List4[1] = List4Name
-    List5[1] = List5Name
+    global List1
+    global List2
+    global List3
+    global List4
+    global List5
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     if List1 != ["ListName", "ListText"]:
         print(List1[1])
     if List2 != ["ListName", "ListText"]:
