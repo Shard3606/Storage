@@ -65,9 +65,8 @@ def CreateList():
     #Save List Text to Database
     time.sleep(3)
     Welcome()
-"""
+
 def EditList():
-    global ListList
     global List1
     global List2
     global List3
@@ -118,9 +117,8 @@ def EditList():
     #Fetch List list and List, print List, make editable
     time.sleep(3)
     Welcome()
-
+"""
 def ViewList():
-    global ListList
     global List1
     global List2
     global List3
@@ -170,7 +168,6 @@ def ViewList():
     Welcome()
 
 def DeleteList():
-    global ListList
     global List1
     global List2
     global List3
@@ -257,15 +254,15 @@ def Welcome():
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
                   "or write 'L' if you would like to log out.")
-    if Selection == "C":
+    if Selection.lower == "c":
         CreateList()
-    elif Selection == "E":
+    elif Selection.lower == "e":
         EditList()
-    elif Selection == "V":
+    elif Selection.lower == "v":
         ViewList()
-    elif Selection == "D":
+    elif Selection.lower == "d":
         DeleteList()
-    elif Selection == "L":
+    elif Selection.lower == "l":
         Logout()
     else:
         "Please make sure to input one of the available options."
