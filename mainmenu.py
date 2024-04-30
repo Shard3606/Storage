@@ -257,15 +257,15 @@ def Welcome():
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
                   "or write 'L' if you would like to log out.")
-    if Selection.lower == "C":
+    if Selection.upper == "C":
         CreateList()
-    elif Selection.lower == "E":
+    elif Selection.upper == "E":
         EditList()
-    elif Selection.lower == "V":
+    elif Selection.upper == "V":
         ViewList()
-    elif Selection.lower == "D":
+    elif Selection.upper == "D":
         DeleteList()
-    elif Selection.lower == "L":
+    elif Selection.upper == "L":
         Logout()
     else:
         "Please make sure to input one of the available options."
