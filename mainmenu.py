@@ -2,15 +2,20 @@ import time
 Lists = []
 Selection = ""
 List1 = ("")
+List1Items = ["ListItems"]
 List1Number = ["ListNumber"]
-List2 = ("ListName")
+List2 = ("")
+List2Items = ["ListItems"]
 List2Number = ["ListNumber"]
-List3 = ("ListName")
-List3Number = ["ListName"]
-List4 = ("ListName")
-List4Number = ["ListName"]
-List5 = ("ListName")
-List5Number = ["ListName"]
+List3 = ("")
+List3Items = ["ListItems"]
+List3Number = ["ListNumber"]
+List4 = ("")
+List4Items = ["ListItems"]
+List4Number = ["ListNumber"]
+List5 = ("")
+List5Items = ["ListItems"]
+List5Number = ["ListNumber"]
 
 def CreateList():
     global List1
@@ -23,15 +28,16 @@ def CreateList():
     global List3Number
     global List4Number
     global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
     if TempListName == str("Back"):
         Welcome()
-    elif TempListName == ("ListName"):
-        print ("Please select a different list name.")
-        time.sleep(3)
-        CreateList ()
     print(str(TempListName))
     print('\n')
     while True:
@@ -42,23 +48,28 @@ def CreateList():
         ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == (""):
         List1 = str(TempListName)
-        List1Number = ListText
+        List1Items = ListText
+        List1Number = ListNumber
         print("Saving List...")
     elif List2 == (""):
         List2 = str(TempListName)
-        List2Number = ListText
+        List2Items = ListText
+        List2Number = ListNumber
         print("Saving List...")
     elif List3 == (""):
         List3 = str(TempListName)
-        List3Number = ListText
+        List3Items = ListText
+        List3Number = ListNumber
         print("Saving List...")
     elif List4 == (""):
         List4 = str(TempListName)
-        List4Number = ListText
+        List4Items = ListText
+        List4Number = ListNumber
         print("Saving List...")
     elif List5 == (""):
         List5 = str(TempListName)
-        List5Number = ListText
+        List5Items = ListText
+        List5Number = ListNumber
         print("Saving List...")
     else:
         print("Out of space, please delete a List to continue.")
@@ -89,9 +100,12 @@ def EditList():
         print(List5)
     ListSelection = input("Please input the name of the List you would like to edit, or input 'Back' to go back.")
     if ListSelection == List1:
-        TextorNumber = input("Would you like to")
-        NewText = input(List1Number)
-        List1Number = NewText
+        print(List1)
+        print(List1Number)
+        TextorNumber = input("Would you like to edit the (I)tems on your list or the (N)umber?")
+        if TextorNumber.lower == "n":
+            NewText = input(List1Number)
+            List1Number = NewText
     elif ListSelection == List2:
         NewText = input(List2Number)
         List2Number = NewText
