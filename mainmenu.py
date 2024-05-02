@@ -35,39 +35,34 @@ def CreateList():
     global List5Items
     ListText = []
     ListNumber = []
-    TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
-    if TempListName == str("Back"):
-        Welcome()
-    print(str(TempListName))
-    print('\n')
     while True:
-        ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+        ListText.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
         if ListText.count("Quit") > 0:
             ListText.remove("Quit")
             break
         ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == (""):
-        List1 = str(TempListName)
+        List1 = ("Something")
         List1Items = ListText
         List1Number = ListNumber
         print("Saving List...")
     elif List2 == (""):
-        List2 = str(TempListName)
+        List2 = str("Something")
         List2Items = ListText
         List2Number = ListNumber
         print("Saving List...")
     elif List3 == (""):
-        List3 = str(TempListName)
+        List3 = str("Something")
         List3Items = ListText
         List3Number = ListNumber
         print("Saving List...")
     elif List4 == (""):
-        List4 = str(TempListName)
+        List4 = str("Something")
         List4Items = ListText
         List4Number = ListNumber
         print("Saving List...")
     elif List5 == (""):
-        List5 = str(TempListName)
+        List5 = str("Something")
         List5Items = ListText
         List5Number = ListNumber
         print("Saving List...")
@@ -104,26 +99,32 @@ def EditList():
     if List5 != (""):
         print(List5)
     ListSelection = input("Please input the name of the List you would like to edit, or input 'Back' to go back.")
-    if ListSelection == List1:
+    if ListSelection.lower() == List1.lower():
         print(List1)
+        print(List1Items)
         print(List1Number)
         TextorNumber = input("Would you like to edit the (I)tems on your list or the (N)umber?")
-        if TextorNumber.lower == "n":
-            NewText = input(List1Number)
-            List1Number = NewText
-    elif ListSelection == List2:
-        NewText = input(List2Number)
-        List2Number = NewText
-    elif ListSelection == List3:
-        NewText = input(List3Number)
-        List3Number = NewText
-    elif ListSelection == List4:
-        NewText = input(List4Number)
-        List4Number = NewText
-    elif ListSelection == List5:
-        NewText = input(List5Number)
-        List5Number = NewText
-    elif ListSelection == "Back":
+        if TextorNumber.lower() == "i":
+            choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
+            if choiceselection.lower() == "a":
+                while True:
+                    List1Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+                    if List1Items.count("Quit") > 0:
+                        List1Items.remove("Quit")
+                        break
+                    List1Number.append(input("How many of this object do you currently have?"))
+            if choiceselection.lower() == "e":
+                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
+                List1Items[itemchoice] = input("What new item would you like?")
+            if choiceselection.lower() == "r":
+                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
+                List1Items.remove(itemchoice)
+                List1Number.remove(itemchoice)
+        if TextorNumber.lower() == "n":
+            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
+            List1Number[itemchoice] = input("What new number would you like?")
+    EditList()
+    if ListSelection.lower == "back":
         Welcome()
     else:
         print("Please make sure to write one of the valid List names.")
@@ -279,15 +280,15 @@ def Welcome():
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
                   "or write 'L' if you would like to log out.")
-    if Selection.lower == "c":
+    if Selection.lower() == "c":
         CreateList()
-    elif Selection.lower == "e":
+    elif Selection.lower() == "e":
         EditList()
-    elif Selection.lower == "v":
+    elif Selection.lower() == "v":
         ViewList()
-    elif Selection.lower == "d":
+    elif Selection.lower() == "d":
         DeleteList()
-    elif Selection.lower == "l":
+    elif Selection.lower() == "l":
         Logout()
     else:
         "Please make sure to input one of the available options."
