@@ -1,21 +1,18 @@
 import time
+UL = 0
+
 Lists = []
 Selection = ""
 List1 = ("")
-List1Items = ["ListItems"]
 List1Number = ["ListNumber"]
-List2 = ("")
-List2Items = ["ListItems"]
+List2 = ("ListName")
 List2Number = ["ListNumber"]
-List3 = ("")
-List3Items = ["ListItems"]
-List3Number = ["ListNumber"]
-List4 = ("")
-List4Items = ["ListItems"]
-List4Number = ["ListNumber"]
-List5 = ("")
-List5Items = ["ListItems"]
-List5Number = ["ListNumber"]
+List3 = ("ListName")
+List3Number = ["ListName"]
+List4 = ("ListName")
+List4Number = ["ListName"]
+List5 = ("ListName")
+List5Number = ["ListName"]
 
 def CreateList():
     global List1
@@ -28,43 +25,42 @@ def CreateList():
     global List3Number
     global List4Number
     global List5Number
-    global List1Items
-    global List2Items
-    global List3Items
-    global List4Items
-    global List5Items
     ListText = []
     ListNumber = []
+    TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
+    if TempListName == str("Back"):
+        Welcome()
+    elif TempListName == ("ListName"):
+        print ("Please select a different list name.")
+        time.sleep(3)
+        CreateList ()
+    print(str(TempListName))
+    print('\n')
     while True:
-        ListText.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+        ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
         if ListText.count("Quit") > 0:
             ListText.remove("Quit")
             break
         ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == (""):
-        List1 = ("Something")
-        List1Items = ListText
-        List1Number = ListNumber
+        List1 = str(TempListName)
+        List1Number = ListText
         print("Saving List...")
-    elif List2 == (""):
-        List2 = str("Something")
-        List2Items = ListText
-        List2Number = ListNumber
+    elif List2 == ["ListName", "ListText"]:
+        List2 = str(TempListName)
+        List2Number = ListText
         print("Saving List...")
-    elif List3 == (""):
-        List3 = str("Something")
-        List3Items = ListText
-        List3Number = ListNumber
+    elif List3 == ["ListName", "ListText"]:
+        List3 = str(TempListName)
+        List3Number = ListText
         print("Saving List...")
-    elif List4 == (""):
-        List4 = str("Something")
-        List4Items = ListText
-        List4Number = ListNumber
+    elif List4 == ["ListName", "ListText"]:
+        List4 = str(TempListName)
+        List4Number = ListText
         print("Saving List...")
-    elif List5 == (""):
-        List5 = str("Something")
-        List5Items = ListText
-        List5Number = ListNumber
+    elif List5 == ["ListName", "ListText"]:
+        List5 = str(TempListName)
+        List5Number = ListText
         print("Saving List...")
     else:
         print("Out of space, please delete a List to continue.")
@@ -72,6 +68,7 @@ def CreateList():
     time.sleep(3)
     Welcome()
 
+"""
 def EditList():
     global List1
     global List2
@@ -83,21 +80,21 @@ def EditList():
     global List3Number
     global List4Number
     global List5Number
-    global List1Items
-    global List2Items
-    global List3Items
-    global List4Items
-    global List5Items
-    if List1 != (""):
-        print(List1)
-    if List2 != (""):
-        print(List2)
-    if List3 != (""):
-        print(List3)
-    if List4 != (""):
-        print(List4)
-    if List5 != (""):
-        print(List5)
+    List1 = List1Name
+    List2 = List2Name
+    List3 = List3Name
+    List4 = List4Name
+    List5 = List5Name
+    if List1 != ["ListName", "ListText"]:
+        print(List1[1])
+    if List2 != ["ListName", "ListText"]:
+        print(List2[1])
+    if List3 != ["ListName", "ListText"]:
+        print(List3[1])
+    if List4 != ["ListName", "ListText"]:
+        print(List4[1])
+    if List5 != ["ListName", "ListText"]:
+        print(List5[1])
     ListSelection = input("Please input the name of the List you would like to edit, or input 'Back' to go back.")
     if ListSelection.lower() == List1.lower():
         print(List1)
@@ -229,7 +226,8 @@ def EditList():
     #Fetch List list and List, print List, make editable
     time.sleep(3)
     Welcome()
-    
+"""
+
 def ViewList():
     global List1
     global List2
@@ -252,24 +250,20 @@ def ViewList():
         print(f"File '{lstfile_path}' not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
-    
-    """
+
+
+"""
 def DeleteList():
     global List1
     global List2
     global List3
     global List4
     global List5
-    global List1
-    global List2
-    global List3
-    global List4
-    global List5
-    global List1Items
-    global List2Items
-    global List3Items
-    global List4Items
-    global List5Items
+    List1[1] = List1Name
+    List2[1] = List2Name
+    List3[1] = List3Name
+    List4[1] = List4Name
+    List5[1] = List5Name
     if List1 != ["ListName", "ListText"]:
         print(List1[1])
     if List2 != ["ListName", "ListText"]:
@@ -333,27 +327,71 @@ def DeleteList():
     time.sleep(3)
     Welcome()
 """
+
 def Logout():
     print("Come back soon!")
     time.sleep(3)
-    import passkey
 
+def signup():
+    name = input("Please make a username: ")
+
+    print ("Your username has been created and is ", name, ".")
+
+    password = input("Now please create a password: ")
+
+    lgnfile = open("Login.txt","a")
+    lgnfile.write (name)
+    lgnfile.write (",")
+    lgnfile.write (password)
+    lgnfile.write("\n")
+    lgnfile.close()
+
+    print ("Your login details have been saved. ")
+    
+def login(lgnfile_path):
+    global UL
+    name = input("Enter your username: ")
+    password = input("Enter your password: ")
+    user = name + "," + password
+    with open(lgnfile_path, 'r') as lgnfile:
+        # read all content of a file
+        content = lgnfile.read()
+        # check if string present in a file
+        if user in content:
+            print("Logged in")
+            UL = 1
+        else:
+            print("Please create an account")
+        
 def Welcome():
     global Selection
-    print("Welcome to your Lists!")
+    global UL
+
+    while UL == 0:
+        LS = input("Would you like to (L)ogin or (S)ign Up?: ")
+        if LS == "l" or LS == "L":
+                login("Login.txt")
+        elif LS == "s" or LS == "S":
+                signup()
+        else:
+                print("Enter valid option")
+
+
+    print("Welcome to St0rage")
+
     Selection = input("Write 'C' if you would like to create a List," '\n'
                   "write 'E' if you would like to edit an existing List," '\n'
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
-                  "or write 'L' if you would like to log out.")
+                  "or write 'L' if you would like to log out: ")
     if Selection.lower() == "c":
         CreateList()
     elif Selection.lower() == "e":
-        EditList()
+        print("EditList()")
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
-        DeleteList()
+       print("DeleteList()")
     elif Selection.lower() == "l":
         Logout()
     else:
