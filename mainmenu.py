@@ -123,6 +123,102 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List1Number[itemchoice] = input("What new number would you like?")
+    if ListSelection.lower() == List2.lower():
+        print(List2)
+        print(List2Items)
+        print(List2Number)
+        TextorNumber = input("Would you like to edit the (I)tems on your list or the (N)umber?")
+        if TextorNumber.lower() == "i":
+            choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
+            if choiceselection.lower() == "a":
+                while True:
+                    List2Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+                    if List2Items.count("Quit") > 0:
+                        List2Items.remove("Quit")
+                        break
+                    List2Number.append(input("How many of this object do you currently have?"))
+            if choiceselection.lower() == "e":
+                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
+                List2Items[itemchoice] = input("What new item would you like?")
+            if choiceselection.lower() == "r":
+                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
+                List2Items.remove(itemchoice)
+                List2Number.remove(itemchoice)
+        if TextorNumber.lower() == "n":
+            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
+            List2Number[itemchoice] = input("What new number would you like?")
+    if ListSelection.lower() == List3.lower():
+        print(List3)
+        print(List3Items)
+        print(List3Number)
+        TextorNumber = input("Would you like to edit the (I)tems on your list or the (N)umber?")
+        if TextorNumber.lower() == "i":
+            choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
+            if choiceselection.lower() == "a":
+                while True:
+                    List3Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+                    if List3Items.count("Quit") > 0:
+                        List3Items.remove("Quit")
+                        break
+                    List3Number.append(input("How many of this object do you currently have?"))
+            if choiceselection.lower() == "e":
+                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
+                List3Items[itemchoice] = input("What new item would you like?")
+            if choiceselection.lower() == "r":
+                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
+                List3Items.remove(itemchoice)
+                List3Number.remove(itemchoice)
+        if TextorNumber.lower() == "n":
+            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
+            List3Number[itemchoice] = input("What new number would you like?")
+    if ListSelection.lower() == List4.lower():
+        print(List4)
+        print(List4Items)
+        print(List4Number)
+        TextorNumber = input("Would you like to edit the (I)tems on your list or the (N)umber?")
+        if TextorNumber.lower() == "i":
+            choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
+            if choiceselection.lower() == "a":
+                while True:
+                    List4Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+                    if List4Items.count("Quit") > 0:
+                        List4Items.remove("Quit")
+                        break
+                    List4Number.append(input("How many of this object do you currently have?"))
+            if choiceselection.lower() == "e":
+                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
+                List4Items[itemchoice] = input("What new item would you like?")
+            if choiceselection.lower() == "r":
+                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
+                List4Items.remove(itemchoice)
+                List4Number.remove(itemchoice)
+        if TextorNumber.lower() == "n":
+            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
+            List4Number[itemchoice] = input("What new number would you like?")
+    if ListSelection.lower() == List5.lower():
+        print(List5)
+        print(List5Items)
+        print(List5Number)
+        TextorNumber = input("Would you like to edit the (I)tems on your list or the (N)umber?")
+        if TextorNumber.lower() == "i":
+            choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
+            if choiceselection.lower() == "a":
+                while True:
+                    List5Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+                    if List5Items.count("Quit") > 0:
+                        List5Items.remove("Quit")
+                        break
+                    List5Number.append(input("How many of this object do you currently have?"))
+            if choiceselection.lower() == "e":
+                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
+                List5Items[itemchoice] = input("What new item would you like?")
+            if choiceselection.lower() == "r":
+                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
+                List5Items.remove(itemchoice)
+                List5Number.remove(itemchoice)
+        if TextorNumber.lower() == "n":
+            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
+            List5Number[itemchoice] = input("What new number would you like?")
     EditList()
     if ListSelection.lower == "back":
         Welcome()
