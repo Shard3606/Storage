@@ -229,7 +229,10 @@ def DeleteList():
 
 def Logout():
     print("Come back soon!")
+    global UL
+    UL = 0
     time.sleep(3)
+    Welcome()
 
 def signup():
     name = input("Please make a username: ")
