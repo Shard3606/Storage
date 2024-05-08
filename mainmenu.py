@@ -276,7 +276,6 @@ def ViewList():
     else:
         print("▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░" + "\n" + "█░░░░░░░░▀▄░░░░░░▄░░" + "\n" + "█░░▀░░▀░░░░░▀▄▄░░█░█" + "\n" + "█░▄░█▀░▄░░░░░░░▀▀░░█" + "\n" +"█░░▀▀▀▀░░░░░░░░░░░░█"+ "\n" +"█░░░░░░░░░░░░░░░░░░█"+ "\n" +"░█░░▄▄░░▄▄▄▄░░▄▄░░█░"+ "\n" +"░█░▄▀█░▄▀░░█░▄▀█░▄▀░"+ "\n" +"░░▀░░░▀░░░░░▀░░░▀░░░")
 
-"""
 def DeleteList():
     global List1
     global List2
@@ -344,16 +343,15 @@ def DeleteList():
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
-    elif ListSelection == "Back":
+    elif ListSelection.lower() == "back":
         Continue = ""
     else:
         print("Please make sure to write one of the valid List names.")
         time.sleep(3)
-        ViewList()
+        DeleteList()
     #Fetch List list and List, print List
     time.sleep(3)
     Welcome()
-"""
 
 def Logout():
     print("Come back soon!")
