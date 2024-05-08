@@ -39,7 +39,7 @@ def CreateList():
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
-    if TempListName == str("Back"):
+    if TempListName.lower() == str("back"):
         Welcome()
     elif TempListName == ("ListName"):
         print ("Please select a different list name.")
@@ -49,8 +49,8 @@ def CreateList():
     print('\n')
     while True:
         ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
-        if ListText.count("Quit") > 0:
-            ListText.remove("Quit")
+        if ListText.count("quit") > 0:
+            ListText.remove("quit")
             break
         ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == (""):
