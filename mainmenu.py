@@ -131,17 +131,16 @@ def EditList():
                         break
                     List1Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)")) - 1
+                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
                 List1Items[itemchoice] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-            
-                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)")) - 1
+                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
                 List1Items.remove(itemchoice)
                 List1Number.remove(itemchoice)
         if TextorNumber.lower() == "n":
-            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)")) - 1
+            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List1Number[itemchoice] = input("What new number would you like?")
-    elif ListSelection.lower() == List2.lower():
+    if ListSelection.lower() == List2.lower():
         print(List2)
         print(List2Items)
         print(List2Number)
@@ -165,7 +164,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List2Number[itemchoice] = input("What new number would you like?")
-    elif ListSelection.lower() == List3.lower():
+    if ListSelection.lower() == List3.lower():
         print(List3)
         print(List3Items)
         print(List3Number)
@@ -189,7 +188,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List3Number[itemchoice] = input("What new number would you like?")
-    elif ListSelection.lower() == List4.lower():
+    if ListSelection.lower() == List4.lower():
         print(List4)
         print(List4Items)
         print(List4Number)
@@ -213,7 +212,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List4Number[itemchoice] = input("What new number would you like?")
-    elif ListSelection.lower() == List5.lower():
+    if ListSelection.lower() == List5.lower():
         print(List5)
         print(List5Items)
         print(List5Number)
@@ -237,7 +236,8 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List5Number[itemchoice] = input("What new number would you like?")
-    elif ListSelection.lower() == "back":
+    EditList()
+    if ListSelection.lower == "back":
         Welcome()
     else:
         print("Please make sure to write one of the valid List names.")
@@ -269,6 +269,11 @@ def ViewList():
         print(f"File '{lstfile_path}' not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+    back = input("Type anything when you're done: ")
+    if back != "SECRET CODE":
+        Welcome()
+    else:
+        print("▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░" + "\n" + "█░░░░░░░░▀▄░░░░░░▄░░" + "\n" + "█░░▀░░▀░░░░░▀▄▄░░█░█" + "\n" + "█░▄░█▀░▄░░░░░░░▀▀░░█" + "\n" +"█░░▀▀▀▀░░░░░░░░░░░░█"+ "\n" +"█░░░░░░░░░░░░░░░░░░█"+ "\n" +"░█░░▄▄░░▄▄▄▄░░▄▄░░█░"+ "\n" +"░█░▄▀█░▄▀░░█░▄▀█░▄▀░"+ "\n" +"░░▀░░░▀░░░░░▀░░░▀░░░")
 
 
 """
@@ -349,7 +354,10 @@ def DeleteList():
 
 def Logout():
     print("Come back soon!")
+    global UL
+    UL = 0
     time.sleep(3)
+    Welcome()
 
 def signup():
     name = input("Please make a username: ")
@@ -366,7 +374,7 @@ def signup():
     lgnfile.close()
 
     print ("Your login details have been saved. ")
-    
+
 def login(lgnfile_path):
     global UL
     name = input("Enter your username: ")
@@ -381,7 +389,7 @@ def login(lgnfile_path):
             UL = 1
         else:
             print("Please create an account")
-        
+
 def Welcome():
     global Selection
     global UL
