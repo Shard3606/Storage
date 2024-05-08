@@ -237,7 +237,7 @@ def EditList():
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List5Number[itemchoice] = input("What new number would you like?")
     EditList()
-    if ListSelection.lower == "back":
+    if ListSelection.lower() == "back":
         Welcome()
     else:
         print("Please make sure to write one of the valid List names.")
