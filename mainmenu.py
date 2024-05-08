@@ -131,15 +131,15 @@ def EditList():
                         break
                     List1Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
-                List1Items[itemchoice] = input("What new item would you like?")
+                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)"))
+                List1Items[itemchoice - 1] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
-                List1Items.remove(itemchoice)
-                List1Number.remove(itemchoice)
+                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)"))
+                List1Items.remove(itemchoice - 1)
+                List1Number.remove(itemchoice - 1)
         if TextorNumber.lower() == "n":
-            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
-            List1Number[itemchoice] = input("What new number would you like?")
+            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
+            List1Number[itemchoice - 1] = input("What new number would you like?")
     if ListSelection.lower() == List2.lower():
         print(List2)
         print(List2Items)
@@ -155,15 +155,15 @@ def EditList():
                         break
                     List2Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
-                List2Items[itemchoice] = input("What new item would you like?")
+                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)"))
+                List2Items[itemchoice - 1] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
-                List2Items.remove(itemchoice)
-                List2Number.remove(itemchoice)
+                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)"))
+                List2Items.remove(itemchoice - 1)
+                List2Number.remove(itemchoice - 1)
         if TextorNumber.lower() == "n":
-            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
-            List2Number[itemchoice] = input("What new number would you like?")
+            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
+            List2Number[itemchoice - 1] = input("What new number would you like?")
     if ListSelection.lower() == List3.lower():
         print(List3)
         print(List3Items)
@@ -179,15 +179,15 @@ def EditList():
                         break
                     List3Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
-                List3Items[itemchoice] = input("What new item would you like?")
+                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)"))
+                List3Items[itemchoice - 1] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
-                List3Items.remove(itemchoice)
-                List3Number.remove(itemchoice)
+                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)"))
+                List3Items.remove(itemchoice - 1)
+                List3Number.remove(itemchoice - 1)
         if TextorNumber.lower() == "n":
-            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
-            List3Number[itemchoice] = input("What new number would you like?")
+            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
+            List3Number[itemchoice - 1] = input("What new number would you like?")
     if ListSelection.lower() == List4.lower():
         print(List4)
         print(List4Items)
@@ -203,15 +203,15 @@ def EditList():
                         break
                     List4Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
-                List4Items[itemchoice] = input("What new item would you like?")
+                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)"))
+                List4Items[itemchoice - 1] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
-                List4Items.remove(itemchoice)
-                List4Number.remove(itemchoice)
+                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)"))
+                List4Items.remove(itemchoice - 1)
+                List4Number.remove(itemchoice - 1)
         if TextorNumber.lower() == "n":
-            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
-            List4Number[itemchoice] = input("What new number would you like?")
+            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
+            List4Number[itemchoice - 1] = input("What new number would you like?")
     if ListSelection.lower() == List5.lower():
         print(List5)
         print(List5Items)
@@ -227,15 +227,15 @@ def EditList():
                         break
                     List5Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
-                List5Items[itemchoice] = input("What new item would you like?")
+                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)"))
+                List5Items[itemchoice - 1] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
-                List5Items.remove(itemchoice)
-                List5Number.remove(itemchoice)
+                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)"))
+                List5Items.remove(itemchoice - 1)
+                List5Number.remove(itemchoice - 1)
         if TextorNumber.lower() == "n":
-            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
-            List5Number[itemchoice] = input("What new number would you like?")
+            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
+            List5Number[itemchoice - 1] = input("What new number would you like?")
     EditList()
     if ListSelection.lower() == "back":
         Welcome()
@@ -274,7 +274,6 @@ def ViewList():
         Welcome()
     else:
         print("▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░" + "\n" + "█░░░░░░░░▀▄░░░░░░▄░░" + "\n" + "█░░▀░░▀░░░░░▀▄▄░░█░█" + "\n" + "█░▄░█▀░▄░░░░░░░▀▀░░█" + "\n" +"█░░▀▀▀▀░░░░░░░░░░░░█"+ "\n" +"█░░░░░░░░░░░░░░░░░░█"+ "\n" +"░█░░▄▄░░▄▄▄▄░░▄▄░░█░"+ "\n" +"░█░▄▀█░▄▀░░█░▄▀█░▄▀░"+ "\n" +"░░▀░░░▀░░░░░▀░░░▀░░░")
-
 
 """
 def DeleteList():
