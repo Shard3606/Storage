@@ -5,14 +5,19 @@ Lists = []
 Selection = ""
 List1 = ("")
 List1Number = ["ListNumber"]
-List2 = ("ListName")
+List1Items = ["ListItems"]
+List2 = ("")
 List2Number = ["ListNumber"]
-List3 = ("ListName")
+List2Items = ["ListItems"]
+List3 = ("")
 List3Number = ["ListName"]
-List4 = ("ListName")
+List3Items = ["ListItems"]
+List4 = ("")
 List4Number = ["ListName"]
-List5 = ("ListName")
+List4Items = ["ListItems"]
+List5 = ("")
 List5Number = ["ListName"]
+List5Items = ["ListItems"]
 
 def CreateList():
     global List1
@@ -25,6 +30,11 @@ def CreateList():
     global List3Number
     global List4Number
     global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
@@ -44,21 +54,22 @@ def CreateList():
         ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == (""):
         List1 = str(TempListName)
-        List1Number = ListText
+        List1Items = ListText
+        List1Number = ListNumber
         print("Saving List...")
-    elif List2 == ["ListName", "ListText"]:
+    elif List2 == (""):
         List2 = str(TempListName)
         List2Number = ListText
         print("Saving List...")
-    elif List3 == ["ListName", "ListText"]:
+    elif List3 == (""):
         List3 = str(TempListName)
         List3Number = ListText
         print("Saving List...")
-    elif List4 == ["ListName", "ListText"]:
+    elif List4 == (""):
         List4 = str(TempListName)
         List4Number = ListText
         print("Saving List...")
-    elif List5 == ["ListName", "ListText"]:
+    elif List5 == (""):
         List5 = str(TempListName)
         List5Number = ListText
         print("Saving List...")
@@ -68,7 +79,6 @@ def CreateList():
     time.sleep(3)
     Welcome()
 
-"""
 def EditList():
     global List1
     global List2
@@ -80,21 +90,31 @@ def EditList():
     global List3Number
     global List4Number
     global List5Number
-    List1 = List1Name
-    List2 = List2Name
-    List3 = List3Name
-    List4 = List4Name
-    List5 = List5Name
-    if List1 != ["ListName", "ListText"]:
-        print(List1[1])
-    if List2 != ["ListName", "ListText"]:
-        print(List2[1])
-    if List3 != ["ListName", "ListText"]:
-        print(List3[1])
-    if List4 != ["ListName", "ListText"]:
-        print(List4[1])
-    if List5 != ["ListName", "ListText"]:
-        print(List5[1])
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
+    if List1 != (""):
+        print(List1)
+        print(List1Items)
+        print(List1Number)
+    if List2 != (""):
+        print(List2)
+        print(List2Items)
+        print(List2Number)
+    if List3 != (""):
+        print(List3)
+        print(List3Items)
+        print(List3Number)
+    if List4 != (""):
+        print(List4)
+        print(List4Items)
+        print(List4Number)
+    if List5 != (""):
+        print(List5)
+        print(List5Items)
+        print(List5Number)
     ListSelection = input("Please input the name of the List you would like to edit, or input 'Back' to go back.")
     if ListSelection.lower() == List1.lower():
         print(List1)
@@ -111,16 +131,17 @@ def EditList():
                         break
                     List1Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
-                itemchoice = input("Which item would you like to edit? (Use the number correspondent to the item)")
+                itemchoice = int(input("Which item would you like to edit? (Use the number correspondent to the item)")) - 1
                 List1Items[itemchoice] = input("What new item would you like?")
             if choiceselection.lower() == "r":
-                itemchoice = input("Which item would you like to remove? (Use the number correspondent to the item)")
+            
+                itemchoice = int(input("Which item would you like to remove? (Use the number correspondent to the item)")) - 1
                 List1Items.remove(itemchoice)
                 List1Number.remove(itemchoice)
         if TextorNumber.lower() == "n":
-            itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
+            itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)")) - 1
             List1Number[itemchoice] = input("What new number would you like?")
-    if ListSelection.lower() == List2.lower():
+    elif ListSelection.lower() == List2.lower():
         print(List2)
         print(List2Items)
         print(List2Number)
@@ -144,7 +165,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List2Number[itemchoice] = input("What new number would you like?")
-    if ListSelection.lower() == List3.lower():
+    elif ListSelection.lower() == List3.lower():
         print(List3)
         print(List3Items)
         print(List3Number)
@@ -168,7 +189,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List3Number[itemchoice] = input("What new number would you like?")
-    if ListSelection.lower() == List4.lower():
+    elif ListSelection.lower() == List4.lower():
         print(List4)
         print(List4Items)
         print(List4Number)
@@ -192,7 +213,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List4Number[itemchoice] = input("What new number would you like?")
-    if ListSelection.lower() == List5.lower():
+    elif ListSelection.lower() == List5.lower():
         print(List5)
         print(List5Items)
         print(List5Number)
@@ -216,8 +237,7 @@ def EditList():
         if TextorNumber.lower() == "n":
             itemchoice = input("Which number would you like to edit? (Use the number correspondent to the item)")
             List5Number[itemchoice] = input("What new number would you like?")
-    EditList()
-    if ListSelection.lower == "back":
+    elif ListSelection.lower() == "back":
         Welcome()
     else:
         print("Please make sure to write one of the valid List names.")
@@ -226,7 +246,6 @@ def EditList():
     #Fetch List list and List, print List, make editable
     time.sleep(3)
     Welcome()
-"""
 
 def ViewList():
     global List1
@@ -264,22 +283,22 @@ def DeleteList():
     List3[1] = List3Name
     List4[1] = List4Name
     List5[1] = List5Name
-    if List1 != ["ListName", "ListText"]:
+    if List1 != (""):
         print(List1[1])
-    if List2 != ["ListName", "ListText"]:
+    if List2 != (""):
         print(List2[1])
-    if List3 != ["ListName", "ListText"]:
+    if List3 != (""):
         print(List3[1])
-    if List4 != ["ListName", "ListText"]:
+    if List4 != (""):
         print(List4[1])
-    if List5 != ["ListName", "ListText"]:
+    if List5 != (""):
         print(List5[1])
     ListSelection = input("Please input the name of the List you would like to delete, or input 'Back' to go back.")
     if ListSelection == List1Name:
         print(List1[2])
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List1 = ["ListName", "ListText"]
+            List1 = ("")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -287,7 +306,7 @@ def DeleteList():
         print(List2[2])
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List2 = ["ListName", "ListText"]
+            List2 = ("")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -295,7 +314,7 @@ def DeleteList():
         print(List3[2])
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List3 = ["ListName", "ListText"]
+            List3 = ("")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -303,7 +322,7 @@ def DeleteList():
         print(List4[2])
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List4 = ["ListName", "ListText"]
+            List4 = ("")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -311,7 +330,7 @@ def DeleteList():
         print(List5[2])
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List5 = ["ListName", "ListText"]
+            List5 = ("")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -387,7 +406,7 @@ def Welcome():
     if Selection.lower() == "c":
         CreateList()
     elif Selection.lower() == "e":
-        print("EditList()")
+        EditList()
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
