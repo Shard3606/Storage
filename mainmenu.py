@@ -283,59 +283,64 @@ def DeleteList():
     global List3
     global List4
     global List5
-    List1[1] = List1Name
-    List2[1] = List2Name
-    List3[1] = List3Name
-    List4[1] = List4Name
-    List5[1] = List5Name
-    if List1 != (""):
-        print(List1[1])
-    if List2 != (""):
-        print(List2[1])
-    if List3 != (""):
-        print(List3[1])
-    if List4 != (""):
-        print(List4[1])
-    if List5 != (""):
-        print(List5[1])
+    global List1Number
+    global List2Number
+    global List3Number
+    global List4Number
+    global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
+    if List1 != ("ListName"):
+        print(List1)
+    if List2 != ("ListName"):
+        print(List2)
+    if List3 != ("ListName"):
+        print(List3)
+    if List4 != ("ListName"):
+        print(List4)
+    if List5 != ("ListName"):
+        print(List5)
     ListSelection = input("Please input the name of the List you would like to delete, or input 'Back' to go back.")
-    if ListSelection == List1Name:
-        print(List1[2])
+    if ListSelection == List1:
+        print(List1)
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List1 = ("")
+            List1 = ("ListName")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
-    elif ListSelection == List2Name:
-        print(List2[2])
+    elif ListSelection == List2:
+        print(List2)
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List2 = ("")
+            List2 = ("ListName")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
-    elif ListSelection == List3Name:
-        print(List3[2])
+    elif ListSelection == List3:
+        print(List3)
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List3 = ("")
+            List3 = ("ListName")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
-    elif ListSelection == List4Name:
-        print(List4[2])
+    elif ListSelection == List4:
+        print(List4)
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List4 = ("")
+            List4 = ("ListName")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
-    elif ListSelection == List5Name:
-        print(List5[2])
+    elif ListSelection == List5:
+        print(List5)
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
-            List5 = ("")
+            List5 = ("ListName")
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -346,8 +351,6 @@ def DeleteList():
         time.sleep(3)
         ViewList()
     #Fetch List list and List, print List
-    time.sleep(3)
-    Welcome()
     time.sleep(3)
     Welcome()
 """
