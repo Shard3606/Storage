@@ -1,4 +1,5 @@
 import time
+import re
 UL = 0
 
 Lists = []
@@ -383,15 +384,19 @@ def login(lgnfile_path):
     name = input("Enter your username: ")
     password = input("Enter your password: ")
     user = name + "," + password
-    with open(lgnfile_path, 'r') as lgnfile:
-        # read all content of a file
-        content = lgnfile.read()
-        # check if string present in a file
-        if user in content:
-            print("Logged in")
-            UL = 1
-        else:
-            print("Please create an account")
+    login_successful = False
+
+    with open(lgnfile_path, 'r') as file:
+        for line_number, line in enumerate(file, start=1):
+            if re.search(r'\b{}\b'.format(re.escape(user)), line):
+                login_successful = True
+                break  # Exit the loop once login is successful
+
+    if login_successful:
+        print("Logged in")
+        UL = 1
+    else:
+        print("Please create an account")
 
 def Welcome():
     global Selection
