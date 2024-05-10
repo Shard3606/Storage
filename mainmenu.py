@@ -456,6 +456,9 @@ def DeleteAccount(lgnfile = open("Login.txt","a")):
                         Welcome()
     if usure.lower() == "n":
         Welcome()
+    else:
+        print("Please enter a valid option")
+        DeleteAccount()
 
 
 Welcome()
