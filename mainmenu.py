@@ -36,6 +36,7 @@ def CreateList():
     global List3Items
     global List4Items
     global List5Items
+    global name
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
@@ -60,23 +61,26 @@ def CreateList():
         print("Saving List...")
     elif List2 == (""):
         List2 = str(TempListName)
-        List2Number = ListText
+        List2Items = ListText
+        List2Number = ListNumber
         print("Saving List...")
     elif List3 == (""):
         List3 = str(TempListName)
-        List3Number = ListText
+        List3Items = ListText
+        List3Number = ListNumber
         print("Saving List...")
     elif List4 == (""):
         List4 = str(TempListName)
-        List4Number = ListText
+        List4Items = ListText
+        List4Number = ListNumber
         print("Saving List...")
     elif List5 == (""):
         List5 = str(TempListName)
-        List5Number = ListText
+        List5Items = ListText
+        List5Number = ListNumber
         print("Saving List...")
     else:
         print("Out of space, please delete a List to continue.")
-    #Save List Text to Database
     time.sleep(3)
     Welcome()
 
@@ -379,6 +383,7 @@ def signup():
 
 def login(lgnfile_path):
     global UL
+    global name
     name = input("Enter your username: ")
     password = input("Enter your password: ")
     user = name + "," + password
@@ -399,6 +404,21 @@ def login(lgnfile_path):
 def Welcome():
     global Selection
     global UL
+    global List1
+    global List2
+    global List3
+    global List4
+    global List5
+    global List1Number
+    global List2Number
+    global List3Number
+    global List4Number
+    global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
 
     while UL == 0:
         LS = input("Would you like to (L)ogin or (S)ign Up?: ")
@@ -416,6 +436,7 @@ def Welcome():
                   "write 'E' if you would like to edit an existing List," '\n'
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
+                  "write 'S' if you would like to save your progress so far," '\n'
                   "or write 'L' if you would like to log out: ")
     if Selection.lower() == "c":
         CreateList()
@@ -425,6 +446,47 @@ def Welcome():
         ViewList()
     elif Selection.lower() == "d":
        print("DeleteList()")
+    elif Selection.lower() == "s":
+        list1file = open("List1" + name + ".txt","a")
+        list1file.write (List1)
+        list1file.write ("\n")
+        list1file.write [List1Items]
+        list1file.write ("\n")
+        list1file.write [List1Number]
+        list1file.write("\n")
+        list1file.close()
+        list2file = open("List2" + name + ".txt","a")
+        list2file.write (List2)
+        list2file.write ("\n")
+        list2file.write [List2Items]
+        list2file.write ("\n")
+        list2file.write [List2Number]
+        list2file.write("\n")
+        list2file.close()
+        list3file = open("List3" + name + ".txt","a")
+        list3file.write (List3)
+        list3file.write ("\n")
+        list3file.write [List3Items]
+        list3file.write ("\n")
+        list3file.write [List3Number]
+        list3file.write("\n")
+        list3file.close()
+        list4file = open("List4" + name + ".txt","a")
+        list4file.write (List4)
+        list4file.write ("\n")
+        list4file.write [List4Items]
+        list4file.write ("\n")
+        list4file.write [List4Number]
+        list4file.write("\n")
+        list4file.close()
+        list5file = open("List5" + name + ".txt","a")
+        list5file.write (List5)
+        list5file.write ("\n")
+        list5file.write [List5Items]
+        list5file.write ("\n")
+        list5file.write [List5Number]
+        list5file.write("\n")
+        list5file.close()
     elif Selection.lower() == "l":
         Logout()
     else:
