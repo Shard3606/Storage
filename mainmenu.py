@@ -416,7 +416,8 @@ def Welcome():
                   "write 'E' if you would like to edit an existing List," '\n'
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
-                  "or write 'L' if you would like to log out: ")
+                  "write 'L' if you would like to log out, " '\n'
+                  "or write 'DA' if you would like to delete the account:")
     if Selection.lower() == "c":
         CreateList()
     elif Selection.lower() == "e":
@@ -424,12 +425,37 @@ def Welcome():
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
-       print("DeleteList()")
+       DeleteList()
     elif Selection.lower() == "l":
         Logout()
+    elif Selection.lower() == "da":
+        DeleteAccount(lgnfile = open("Login.txt","a"))
     else:
         "Please make sure to input one of the available options."
         time.sleep(3)
         Welcome()
+
+def DeleteAccount(lgnfile = open("Login.txt","a")):
+    global UL
+    global name
+    global password
+    global user
+    usure = input("Are you sure you would like to delete your account (Y/N)")
+    if usure.lower() == "y":
+        with open('login.txt', 'r') as fr:
+            user = fr.readlines()
+
+            with open('Login.txt', 'w') as fw:
+                for line in user:
+
+                    # find() returns -1
+                    # if no match found
+                    if line.find('user') == -1:
+                        fw.write(line)
+                        UL = 0
+                        Welcome()
+    if usure.lower() == "n":
+        Welcome()
+
 
 Welcome()
