@@ -39,7 +39,7 @@ def CreateList():
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
-    if TempListName == str("Back"):
+    if TempListName.lower() == str("back"):
         Welcome()
     elif TempListName == ("ListName"):
         print ("Please select a different list name.")
@@ -49,8 +49,8 @@ def CreateList():
     print('\n')
     while True:
         ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
-        if ListText.count("Quit") > 0:
-            ListText.remove("Quit")
+        if ListText.count("quit") > 0:
+            ListText.remove("quit")
             break
         ListNumber.append(input("How many of this object do you currently have?"))
     if List1 == (""):
@@ -277,7 +277,6 @@ def ViewList():
     else:
         print("▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░" + "\n" + "█░░░░░░░░▀▄░░░░░░▄░░" + "\n" + "█░░▀░░▀░░░░░▀▄▄░░█░█" + "\n" + "█░▄░█▀░▄░░░░░░░▀▀░░█" + "\n" +"█░░▀▀▀▀░░░░░░░░░░░░█"+ "\n" +"█░░░░░░░░░░░░░░░░░░█"+ "\n" +"░█░░▄▄░░▄▄▄▄░░▄▄░░█░"+ "\n" +"░█░▄▀█░▄▀░░█░▄▀█░▄▀░"+ "\n" +"░░▀░░░▀░░░░░▀░░░▀░░░")
 
-"""
 def DeleteList():
     global List1
     global List2
@@ -345,16 +344,15 @@ def DeleteList():
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
-    elif ListSelection == "Back":
+    elif ListSelection.lower() == "back":
         Continue = ""
     else:
         print("Please make sure to write one of the valid List names.")
         time.sleep(3)
-        ViewList()
+        DeleteList()
     #Fetch List list and List, print List
     time.sleep(3)
     Welcome()
-"""
 
 def Logout():
     print("Come back soon!")
