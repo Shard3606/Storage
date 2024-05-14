@@ -446,7 +446,7 @@ def Welcome():
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
-       print("DeleteList()")
+        DeleteList()
     elif Selection.lower() == "s":
         list1file = open("List1" + name + ".txt","a")
         list1file.write (List1)
