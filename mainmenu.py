@@ -437,6 +437,7 @@ def Welcome():
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
                   "write 'S' if you would like to save your progress so far," '\n'
+                  "write 'DA' if you want to delete your account," '\n'
                   "or write 'L' if you would like to log out: ")
     if Selection.lower() == "c":
         CreateList()
