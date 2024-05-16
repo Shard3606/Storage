@@ -1,5 +1,6 @@
 import time
 import re
+import os
 UL = 0
 
 Lists = []
@@ -20,6 +21,16 @@ List5 = ("ListName")
 List5Number = ["ListNumber"]
 List5Items = ["ListItems"]
 
+def clear():
+    screen_clear = 'Clearing Screen .'
+    print(screen_clear)
+    time.sleep(.3)
+    print(screen_clear + ' .')
+    time.sleep(.3)
+    print(screen_clear + ' . .')
+    time.sleep(.3)
+    os.system('cls')
+
 def CreateList():
     global List1
     global List2
@@ -37,6 +48,7 @@ def CreateList():
     global List4Items
     global List5Items
     global name
+    clear()
     ListText = []
     ListNumber = []
     TempListName = input("What would you like the name of the List to be? Or input 'Back' to go back.")
@@ -253,12 +265,14 @@ def EditList():
         time.sleep(3)
         EditList()
 
+
 def ViewList():
     global List1
     global List2
     global List3
     global List4
     global List5
+    clear()
     lstuser = input("Enter your username: ")
     lstpass = input("Enter your password: ")
     lstfile_path = str(lstuser.lower()) + "," + str(lstpass.lower())
@@ -276,10 +290,15 @@ def ViewList():
     except Exception as e:
         print(f"An error occurred: {e}")
     back = input("Type anything when you're done: ")
-    if back != "SECRET CODE":
+    if back == "anything":
+        print("Funny guy")
+        time.sleep(2)
         Welcome()
-    else:
+    elif back == "SECRET CODE":
         print("▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░" + "\n" + "█░░░░░░░░▀▄░░░░░░▄░░" + "\n" + "█░░▀░░▀░░░░░▀▄▄░░█░█" + "\n" + "█░▄░█▀░▄░░░░░░░▀▀░░█" + "\n" +"█░░▀▀▀▀░░░░░░░░░░░░█"+ "\n" +"█░░░░░░░░░░░░░░░░░░█"+ "\n" +"░█░░▄▄░░▄▄▄▄░░▄▄░░█░"+ "\n" +"░█░▄▀█░▄▀░░█░▄▀█░▄▀░"+ "\n" +"░░▀░░░▀░░░░░▀░░░▀░░░")
+    else:
+        Welcome()
+
 
 def DeleteList():
     global List1
@@ -297,6 +316,7 @@ def DeleteList():
     global List3Items
     global List4Items
     global List5Items
+    clear()
     if List1 != ("ListName"):
         print(List1)
     if List2 != ("ListName"):
@@ -360,6 +380,7 @@ def DeleteList():
 
 def Logout():
     print("Come back soon!")
+    clear()
     global UL
     UL = 0
     time.sleep(3)
@@ -525,6 +546,8 @@ def Welcome():
     global List4Items
     global List5Items
 
+    clear()
+
     while UL == 0:
         LS = input("Would you like to (L)ogin or (S)ign Up?: ")
         if LS == "l" or LS == "L":
@@ -542,6 +565,7 @@ def Welcome():
                   "write 'V' if you would like to view an existing List," '\n'
                   "write 'D' if you would like to delete an existing List," '\n'
                   "write 'S' if you would like to save your progress so far," '\n'
+                  "write 'DA' if you want to delete your account," '\n'
                   "or write 'L' if you would like to log out: ")
     if Selection.lower() == "c":
         CreateList()
@@ -550,6 +574,7 @@ def Welcome():
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
+        DeleteList()
         DeleteList()
     elif Selection.lower() == "s":
         list1file = open("List1" + name + ".txt","w")
@@ -604,6 +629,7 @@ def DeleteAccount(lgnfile = open("Login.txt","a")):
     global name
     global password
     global user
+    clear()
     usure = input("Are you sure you would like to delete your account (Y/N)")
     if usure.lower() == "y":
         with open('login.txt', 'r') as fr:
