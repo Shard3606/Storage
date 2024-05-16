@@ -4,20 +4,20 @@ UL = 0
 
 Lists = []
 Selection = ""
-List1 = ("")
+List1 = ("ListName")
 List1Number = ["ListNumber"]
 List1Items = ["ListItems"]
-List2 = ("")
+List2 = ("ListName")
 List2Number = ["ListNumber"]
 List2Items = ["ListItems"]
-List3 = ("")
-List3Number = ["ListName"]
+List3 = ("ListName")
+List3Number = ["ListNumber"]
 List3Items = ["ListItems"]
-List4 = ("")
-List4Number = ["ListName"]
+List4 = ("ListName")
+List4Number = ["ListNumber"]
 List4Items = ["ListItems"]
-List5 = ("")
-List5Number = ["ListName"]
+List5 = ("ListName")
+List5Number = ["ListNumber"]
 List5Items = ["ListItems"]
 
 def CreateList():
@@ -49,32 +49,32 @@ def CreateList():
     print(str(TempListName))
     print('\n')
     while True:
-        ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
-        if ListText.count("quit") > 0:
-            ListText.remove("quit")
+        ListText.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
+        if ListText.count("Quit") > 0:
+            ListText.remove("Quit")
             break
         ListNumber.append(input("How many of this object do you currently have?"))
-    if List1 == (""):
+    if List1 == ("ListName"):
         List1 = str(TempListName)
         List1Items = ListText
         List1Number = ListNumber
         print("Saving List...")
-    elif List2 == (""):
+    elif List2 == ("ListName"):
         List2 = str(TempListName)
         List2Items = ListText
         List2Number = ListNumber
         print("Saving List...")
-    elif List3 == (""):
+    elif List3 == ("ListName"):
         List3 = str(TempListName)
         List3Items = ListText
         List3Number = ListNumber
         print("Saving List...")
-    elif List4 == (""):
+    elif List4 == ("ListName"):
         List4 = str(TempListName)
         List4Items = ListText
         List4Number = ListNumber
         print("Saving List...")
-    elif List5 == (""):
+    elif List5 == ("ListName"):
         List5 = str(TempListName)
         List5Items = ListText
         List5Number = ListNumber
@@ -100,23 +100,23 @@ def EditList():
     global List3Items
     global List4Items
     global List5Items
-    if List1 != (""):
+    if List1 != ("ListName"):
         print(List1)
         print(List1Items)
         print(List1Number)
-    if List2 != (""):
+    if List2 != ("ListName"):
         print(List2)
         print(List2Items)
         print(List2Number)
-    if List3 != (""):
+    if List3 != ("ListName"):
         print(List3)
         print(List3Items)
         print(List3Number)
-    if List4 != (""):
+    if List4 != ("ListName"):
         print(List4)
         print(List4Items)
         print(List4Number)
-    if List5 != (""):
+    if List5 != ("ListName"):
         print(List5)
         print(List5Items)
         print(List5Number)
@@ -378,10 +378,60 @@ def signup():
     lgnfile.write (password)
     lgnfile.write("\n")
     lgnfile.close()
+    list1file = open("List1" + name + ".txt","w")
+    list1file.writelines (List1)
+    list1file.write ("\n")
+    list1file.writelines (str(List1Items))
+    list1file.write ("\n")
+    list1file.writelines (str(List1Number))
+    list1file.close()
+    list2file = open("List2" + name + ".txt","w")
+    list2file.writelines (List2)
+    list2file.write ("\n")
+    list2file.writelines (str(List2Items))
+    list2file.write ("\n")
+    list2file.writelines (str(List2Number))
+    list2file.close()
+    list3file = open("List3" + name + ".txt","w")
+    list3file.writelines (List3)
+    list3file.write ("\n")
+    list3file.writelines (str(List3Items))
+    list3file.write ("\n")
+    list3file.writelines (str(List3Number))
+    list3file.close()
+    list4file = open("List4" + name + ".txt","w")
+    list4file.writelines (List4)
+    list4file.write ("\n")
+    list4file.writelines (str(List4Items))
+    list4file.write ("\n")
+    list4file.writelines (str(List4Number))
+    list4file.close()
+    list5file = open("List5" + name + ".txt","w")
+    list5file.writelines (List5)
+    list5file.write ("\n")
+    list5file.writelines (str(List5Items))
+    list5file.write ("\n")
+    list5file.writelines (str(List5Number))
+    list5file.close()
 
     print ("Your login details have been saved. ")
 
 def login(lgnfile_path):
+    global List1
+    global List2
+    global List3
+    global List4
+    global List5
+    global List1Number
+    global List2Number
+    global List3Number
+    global List4Number
+    global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     global UL
     global name
     name = input("Enter your username: ")
@@ -400,6 +450,61 @@ def login(lgnfile_path):
         UL = 1
     else:
         print("Please create an account")
+    list1file = open("List1" + name + ".txt","r")
+    list1clear = list1file.readline()
+    if list1clear[0] != ("ListName"):
+        List1 = list1clear[0]
+        List1Number = list1clear[1]
+        List1Items = list1clear[2]
+    else:
+        List1 = ("ListName")
+        List1Number = ["ListNumber"]
+        List1Items = ["ListItems"]
+    list1file.close
+    list2file = open("List2" + name + ".txt","r")
+    list2clear = list2file.readline()
+    if list2clear[0] != ("ListName"):
+        List2 = list2clear[0]
+        List2Number = list2clear[1]
+        List2Items = list2clear[2]
+    else:
+        List2 = ("ListName")
+        List2Number = ["ListNumber"]
+        List2Items = ["ListItems"]
+    list2file.close
+    list3file = open("List3" + name + ".txt","r")
+    list3clear = list3file.readline()
+    if list3clear[0] != ("ListName"):
+        List3 = list3clear[0]
+        List3Number = list3clear[1]
+        List3Items = list3clear[2]
+    else:
+        List3 = ("ListName")
+        List3Number = ["ListNumber"]
+        List3Items = ["ListItems"]
+    list3file.close
+    list4file = open("List4" + name + ".txt","r")
+    list4clear = list4file.readline()
+    if list4clear[0] != ("ListName"):
+        List4 = list4clear[0]
+        List4Number = list4clear[1]
+        List4Items = list4clear[2]
+    else:
+        List4 = ("ListName")
+        List4Number = ["ListNumber"]
+        List4Items = ["ListItems"]
+    list4file.close
+    list5file = open("List5" + name + ".txt","r")
+    list5clear = list5file.readline()
+    if list5clear[0] != ("ListName"):
+        List5 = list5clear[0]
+        List5Number = list5clear[1]
+        List5Items = list5clear[2]
+    else:
+        List5 = ("ListName")
+        List5Number = ["ListNumber"]
+        List5Items = ["ListItems"]
+    list5file.close
 
 def Welcome():
     global Selection
@@ -445,48 +550,46 @@ def Welcome():
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
-       print("DeleteList()")
+        DeleteList()
     elif Selection.lower() == "s":
-        list1file = open("List1" + name + ".txt","a")
-        list1file.write (List1)
+        list1file = open("List1" + name + ".txt","w")
+        list1file.writelines (List1)
         list1file.write ("\n")
-        list1file.write [List1Items]
+        list1file.writelines (str(List1Items))
         list1file.write ("\n")
-        list1file.write [List1Number]
-        list1file.write("\n")
+        list1file.writelines (str(List1Number))
         list1file.close()
-        list2file = open("List2" + name + ".txt","a")
-        list2file.write (List2)
+        list2file = open("List2" + name + ".txt","w")
+        list2file.writelines (List2)
         list2file.write ("\n")
-        list2file.write [List2Items]
+        list2file.writelines (str(List2Items))
         list2file.write ("\n")
-        list2file.write [List2Number]
-        list2file.write("\n")
+        list2file.writelines (str(List2Number))
         list2file.close()
-        list3file = open("List3" + name + ".txt","a")
-        list3file.write (List3)
+        list3file = open("List3" + name + ".txt","w")
+        list3file.writelines (List3)
         list3file.write ("\n")
-        list3file.write [List3Items]
+        list3file.writelines (str(List3Items))
         list3file.write ("\n")
-        list3file.write [List3Number]
-        list3file.write("\n")
+        list3file.writelines (str(List3Number))
         list3file.close()
-        list4file = open("List4" + name + ".txt","a")
-        list4file.write (List4)
+        list4file = open("List4" + name + ".txt","w")
+        list4file.writelines (List4)
         list4file.write ("\n")
-        list4file.write [List4Items]
+        list4file.writelines (str(List4Items))
         list4file.write ("\n")
-        list4file.write [List4Number]
-        list4file.write("\n")
+        list4file.writelines (str(List4Number))
         list4file.close()
-        list5file = open("List5" + name + ".txt","a")
-        list5file.write (List5)
+        list5file = open("List5" + name + ".txt","w")
+        list5file.writelines (List5)
         list5file.write ("\n")
-        list5file.write [List5Items]
+        list5file.writelines (str(List5Items))
         list5file.write ("\n")
-        list5file.write [List5Number]
-        list5file.write("\n")
+        list5file.writelines (str(List5Number))
         list5file.close()
+        print ("Saving...")
+        time.sleep(3)
+        Welcome()
     elif Selection.lower() == "l":
         Logout()
     elif Selection.lower() == "da":
