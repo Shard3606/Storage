@@ -383,6 +383,21 @@ def Logout():
     clear()
     global UL
     UL = 0
+    List1 = ("ListName")
+    List1Number = ["ListNumber"]
+    List1Items = ["ListItems"]
+    List2 = ("ListName")
+    List2Number = ["ListNumber"]
+    List2Items = ["ListItems"]
+    List3 = ("ListName")
+    List3Number = ["ListNumber"]
+    List3Items = ["ListItems"]
+    List4 = ("ListName")
+    List4Number = ["ListNumber"]
+    List4Items = ["ListItems"]
+    List5 = ("ListName")
+    List5Number = ["ListNumber"]
+    List5Items = ["ListItems"]
     time.sleep(3)
     Welcome()
 
