@@ -1,3 +1,0 @@
-sigma
-['Toast', 'butter']
-['4', '6']
