@@ -57,15 +57,22 @@ def CreateList():
     elif TempListName == ("ListName"):
         print ("Please select a different list name.")
         time.sleep(3)
+        clear()
         CreateList ()
     print(str(TempListName))
     print('\n')
     while True:
-        ListText.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
-        if ListText.count("Quit") > 0:
-            ListText.remove("Quit")
+        ListText.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+        if ListText.count("Quit") > 0 or ListText.count("quit") > 0:
+            ListText.pop()
             break
-        ListNumber.append(input("How many of this object do you currently have?"))
+        Number = input("How many of this object do you currently have?")
+        if Number.isnumeric():
+            ListNumber.append(Number)
+        else:
+            print("Please input a number.")
+            ListText.pop()
+            time.sleep(3)
     if List1 == ("ListName"):
         List1 = str(TempListName)
         List1Items = ListText
@@ -94,6 +101,7 @@ def CreateList():
     else:
         print("Out of space, please delete a List to continue.")
     time.sleep(3)
+    clear()
     Welcome()
 
 def EditList():
@@ -114,24 +122,14 @@ def EditList():
     global List5Items
     if List1 != ("ListName"):
         print(List1)
-        print(List1Items)
-        print(List1Number)
     if List2 != ("ListName"):
         print(List2)
-        print(List2Items)
-        print(List2Number)
     if List3 != ("ListName"):
         print(List3)
-        print(List3Items)
-        print(List3Number)
     if List4 != ("ListName"):
         print(List4)
-        print(List4Items)
-        print(List4Number)
     if List5 != ("ListName"):
         print(List5)
-        print(List5Items)
-        print(List5Number)
     ListSelection = input("Please input the name of the List you would like to edit, or input 'Back' to go back.")
     if ListSelection.lower() == List1.lower():
         print(List1)
@@ -142,9 +140,9 @@ def EditList():
             choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
             if choiceselection.lower() == "a":
                 while True:
-                    List1Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
-                    if List1Items.count("Quit") > 0:
-                        List1Items.remove("Quit")
+                    List1Items.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+                    if List1Items.count("Quit") > 0 or List1Items.count("quit") > 0:
+                        List1Items.pop()
                         break
                     List1Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
@@ -158,7 +156,7 @@ def EditList():
             itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
             List1Number[itemchoice - 1] = input("What new number would you like?")
         EditList()
-    if ListSelection.lower() == List2.lower():
+    elif ListSelection.lower() == List2.lower():
         print(List2)
         print(List2Items)
         print(List2Number)
@@ -167,9 +165,9 @@ def EditList():
             choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
             if choiceselection.lower() == "a":
                 while True:
-                    List2Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
-                    if List2Items.count("Quit") > 0:
-                        List2Items.remove("Quit")
+                    List2Items.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+                    if List2Items.count("Quit") > 0 or List2Items.count("quit") > 0:
+                        List1Items.pop()
                         break
                     List2Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
@@ -183,7 +181,7 @@ def EditList():
             itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
             List2Number[itemchoice - 1] = input("What new number would you like?")
         EditList()
-    if ListSelection.lower() == List3.lower():
+    elif ListSelection.lower() == List3.lower():
         print(List3)
         print(List3Items)
         print(List3Number)
@@ -192,9 +190,9 @@ def EditList():
             choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
             if choiceselection.lower() == "a":
                 while True:
-                    List3Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
-                    if List3Items.count("Quit") > 0:
-                        List3Items.remove("Quit")
+                    List3Items.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+                    if List3Items.count("Quit") > 0 or List3Items.count("quit") > 0:
+                        List3Items.pop()
                         break
                     List3Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
@@ -208,7 +206,7 @@ def EditList():
             itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
             List3Number[itemchoice - 1] = input("What new number would you like?")
         EditList()
-    if ListSelection.lower() == List4.lower():
+    elif ListSelection.lower() == List4.lower():
         print(List4)
         print(List4Items)
         print(List4Number)
@@ -217,9 +215,9 @@ def EditList():
             choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
             if choiceselection.lower() == "a":
                 while True:
-                    List4Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
-                    if List4Items.count("Quit") > 0:
-                        List4Items.remove("Quit")
+                    List4Items.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+                    if List4Items.count("Quit") > 0 or List4Items.count("quit") > 0:
+                        List4Items.pop()
                         break
                     List4Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
@@ -233,7 +231,7 @@ def EditList():
             itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
             List4Number[itemchoice - 1] = input("What new number would you like?")
         EditList()
-    if ListSelection.lower() == List5.lower():
+    elif ListSelection.lower() == List5.lower():
         print(List5)
         print(List5Items)
         print(List5Number)
@@ -242,9 +240,9 @@ def EditList():
             choiceselection = input("Would you like to (A)dd something on the list, (E)dit something on the list, or (R)emove something from the list?")
             if choiceselection.lower() == "a":
                 while True:
-                    List5Items.append(input("What object would you like to add? (Type 'Quit' (Must be with a capital Q) when you are done.)"))
-                    if List5Items.count("Quit") > 0:
-                        List5Items.remove("Quit")
+                    List5Items.append(input("What object would you like to add? (Type 'Quit' when you are done.)"))
+                    if List5Items.count("Quit") > 0 or List5Items.count("quit") > 0:
+                        List5Items.pop()
                         break
                     List5Number.append(input("How many of this object do you currently have?"))
             if choiceselection.lower() == "e":
@@ -258,11 +256,13 @@ def EditList():
             itemchoice = int(input("Which number would you like to edit? (Use the number correspondent to the item)"))
             List5Number[itemchoice - 1] = input("What new number would you like?")
         EditList()
-    if ListSelection.lower() == "back":
+    elif ListSelection.lower() == "back":
+        clear()
         Welcome()
     else:
         print("Please make sure to write one of the valid List names.")
         time.sleep(3)
+        clear()
         EditList()
 
 
@@ -272,31 +272,65 @@ def ViewList():
     global List3
     global List4
     global List5
+    global List1Number
+    global List2Number
+    global List3Number
+    global List4Number
+    global List5Number
+    global List1Items
+    global List2Items
+    global List3Items
+    global List4Items
+    global List5Items
     clear()
-    lstuser = input("Enter your username: ")
-    lstpass = input("Enter your password: ")
-    lstfile_path = str(lstuser.lower()) + "," + str(lstpass.lower())
-
-    try:
-        with open(lstfile_path, 'r') as file:
-            # Read the content of the file
-            file_content = file.read()
-
-            # Print the content
-            print("File Content:\n", file_content)
-
-    except FileNotFoundError:
-        print(f"File '{lstfile_path}' not found.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    if List1 != ("ListName"):
+        print(List1)
+    if List2 != ("ListName"):
+        print(List2)
+    if List3 != ("ListName"):
+        print(List3)
+    if List4 != ("ListName"):
+        print(List4)
+    if List5 != ("ListName"):
+        print(List5)
+    ListSelection = input("Please input the name of the List you would like to view, or input 'Back' to go back.")
+    if ListSelection.lower() == List1.lower():
+        print(List1)
+        print(List1Items)
+        print(List1Number)
+    elif ListSelection.lower() == List2.lower():
+        print(List2)
+        print(List2Items)
+        print(List2Number)
+    elif ListSelection.lower() == List3.lower():
+        print(List3)
+        print(List3Items)
+        print(List3Number)
+    elif ListSelection.lower() == List4.lower():
+        print(List4)
+        print(List4Items)
+        print(List4Number)
+    elif ListSelection.lower() == List5.lower():
+        print(List5)
+        print(List5Items)
+        print(List5Number)
+    elif ListSelection.lower() == "back":
+        clear()
+        Welcome()
+    else:
+        print("Please make sure to write one of the valid List names.")
+        time.sleep(3)
+        clear()
+        EditList()
     back = input("Type anything when you're done: ")
     if back == "anything":
         print("Funny guy")
-        time.sleep(2)
+        time.sleep(3)
         Welcome()
     elif back == "SECRET CODE":
         print("▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░" + "\n" + "█░░░░░░░░▀▄░░░░░░▄░░" + "\n" + "█░░▀░░▀░░░░░▀▄▄░░█░█" + "\n" + "█░▄░█▀░▄░░░░░░░▀▀░░█" + "\n" +"█░░▀▀▀▀░░░░░░░░░░░░█"+ "\n" +"█░░░░░░░░░░░░░░░░░░█"+ "\n" +"░█░░▄▄░░▄▄▄▄░░▄▄░░█░"+ "\n" +"░█░▄▀█░▄▀░░█░▄▀█░▄▀░"+ "\n" +"░░▀░░░▀░░░░░▀░░░▀░░░")
     else:
+        clear()
         Welcome()
 
 
@@ -333,6 +367,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List1 = ("ListName")
+            List1Items = ["ListItems"]
             List1Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
@@ -342,6 +377,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List2 = ("ListName")
+            List2Items = ["ListItems"]
             List2Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
@@ -351,6 +387,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List3 = ("ListName")
+            List3Items = ["ListItems"]
             List3Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
@@ -360,6 +397,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List4 = ("ListName")
+            List4Items = ["ListItems"]
             List4Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
@@ -369,18 +407,21 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List5 = ("ListName")
+            List5Items = ["ListItems"]
             List5Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
+    
     elif ListSelection.lower() == "back":
         Continue = ""
     else:
         print("Please make sure to write one of the valid List names.")
         time.sleep(3)
+        clear()
         DeleteList()
     #Fetch List list and List, print List
-    time.sleep(3)
+    clear()
     Welcome()
 
 def Logout():
@@ -418,7 +459,7 @@ def Logout():
     List5 = ("ListName")
     List5Number = ["ListNumber"]
     List5Items = ["ListItems"]
-    time.sleep(3)
+    clear()
     Welcome()
 
 def signup():
@@ -592,7 +633,7 @@ def Welcome():
         else:
                 print("Enter valid option")
 
-
+    clear()
     print("Welcome to St0rage")
 
     Selection = input("Write 'C' if you would like to create a List," '\n'
@@ -609,7 +650,6 @@ def Welcome():
     elif Selection.lower() == "v":
         ViewList()
     elif Selection.lower() == "d":
-        DeleteList()
         DeleteList()
     elif Selection.lower() == "s":
         list1file = open("List1" + name + ".txt","w")
@@ -648,7 +688,7 @@ def Welcome():
         list5file.writelines (str(List5Number))
         list5file.close()
         print ("Saving...")
-        time.sleep(3)
+        clear()
         Welcome()
     elif Selection.lower() == "l":
         Logout()
@@ -657,6 +697,7 @@ def Welcome():
     else:
         "Please make sure to input one of the available options."
         time.sleep(3)
+        clear()
         Welcome()
 
 def DeleteAccount(lgnfile = open("Login.txt","a")):
@@ -677,6 +718,21 @@ def DeleteAccount(lgnfile = open("Login.txt","a")):
                     # if no match found
                     if line.find('user') == -1:
                         fw.write(line)
+                        List1 = ("ListName")
+                        List1Number = ["ListNumber"]
+                        List2 = ("ListName")
+                        List1Items = ["ListItems"]
+                        List2Number = ["ListNumber"]
+                        List2Items = ["ListItems"]
+                        List3 = ("ListName")
+                        List3Number = ["ListNumber"]
+                        List3Items = ["ListItems"]
+                        List4 = ("ListName")
+                        List4Number = ["ListNumber"]
+                        List4Items = ["ListItems"]
+                        List5 = ("ListName")
+                        List5Number = ["ListNumber"]
+                        List5Items = ["ListItems"]
                         UL = 0
                         Welcome()
     if usure.lower() == "n":
@@ -684,6 +740,5 @@ def DeleteAccount(lgnfile = open("Login.txt","a")):
     else:
         print("Please enter a valid option")
         DeleteAccount()
-
 
 Welcome()
