@@ -677,6 +677,21 @@ def DeleteAccount(lgnfile = open("Login.txt","a")):
                     # if no match found
                     if line.find('user') == -1:
                         fw.write(line)
+                        List1 = ("ListName")
+                        List1Number = ["ListNumber"]
+                        List2 = ("ListName")
+                        List1Items = ["ListItems"]
+                        List2Number = ["ListNumber"]
+                        List2Items = ["ListItems"]
+                        List3 = ("ListName")
+                        List3Number = ["ListNumber"]
+                        List3Items = ["ListItems"]
+                        List4 = ("ListName")
+                        List4Number = ["ListNumber"]
+                        List4Items = ["ListItems"]
+                        List5 = ("ListName")
+                        List5Number = ["ListNumber"]
+                        List5Items = ["ListItems"]
                         UL = 0
                         Welcome()
     if usure.lower() == "n":
