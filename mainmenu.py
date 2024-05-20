@@ -472,9 +472,9 @@ def login(lgnfile_path):
     else:
         print("Please create an account")
     list1file = open("List1" + name + ".txt","r")
-    list1clear = list1file.readline()
+    list1clear = [line.rstrip() for line in list1file]
     if list1clear[0] != ("ListName"):
-        List1 = list1clear[0]
+        List1 = str(list1clear[0])
         List1Number = list1clear[1]
         List1Items = list1clear[2]
     else:
@@ -483,9 +483,9 @@ def login(lgnfile_path):
         List1Items = ["ListItems"]
     list1file.close
     list2file = open("List2" + name + ".txt","r")
-    list2clear = list2file.readline()
+    list2clear = [line.rstrip() for line in list2file]
     if list2clear[0] != ("ListName"):
-        List2 = list2clear[0]
+        List2 = str(list2clear[0])
         List2Number = list2clear[1]
         List2Items = list2clear[2]
     else:
@@ -494,9 +494,9 @@ def login(lgnfile_path):
         List2Items = ["ListItems"]
     list2file.close
     list3file = open("List3" + name + ".txt","r")
-    list3clear = list3file.readline()
+    list3clear = [line.rstrip() for line in list3file]
     if list3clear[0] != ("ListName"):
-        List3 = list3clear[0]
+        List3 = str(list3clear[0])
         List3Number = list3clear[1]
         List3Items = list3clear[2]
     else:
@@ -505,9 +505,9 @@ def login(lgnfile_path):
         List3Items = ["ListItems"]
     list3file.close
     list4file = open("List4" + name + ".txt","r")
-    list4clear = list4file.readline()
+    list4clear = [line.rstrip() for line in list4file]
     if list4clear[0] != ("ListName"):
-        List4 = list4clear[0]
+        List4 = str(list4clear[0])
         List4Number = list4clear[1]
         List4Items = list4clear[2]
     else:
@@ -516,9 +516,9 @@ def login(lgnfile_path):
         List4Items = ["ListItems"]
     list4file.close
     list5file = open("List5" + name + ".txt","r")
-    list5clear = list5file.readline()
+    list5clear = [line.rstrip() for line in list5file]
     if list5clear[0] != ("ListName"):
-        List5 = list5clear[0]
+        List5 = str(list5clear[0])
         List5Number = list5clear[1]
         List5Items = list5clear[2]
     else:
