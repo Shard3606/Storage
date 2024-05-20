@@ -333,6 +333,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List1 = ("ListName")
+            List1Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -341,6 +342,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List2 = ("ListName")
+            List2Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -349,6 +351,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List3 = ("ListName")
+            List3Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -357,6 +360,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List4 = ("ListName")
+            List4Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
@@ -365,6 +369,7 @@ def DeleteList():
         Sure = input("Are you sure you want to delete this List? Input N for no and Y for yes.")
         if Sure == "Y":
             List5 = ("ListName")
+            List5Number = ["ListNumber"]
             print("Deleting List...")
         elif Sure == "N":
             Continue = ""
