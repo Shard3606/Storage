@@ -383,21 +383,6 @@ def Logout():
     clear()
     global UL
     UL = 0
-    List1 = ("ListName")
-    List1Number = ["ListNumber"]
-    List1Items = ["ListItems"]
-    List2 = ("ListName")
-    List2Number = ["ListNumber"]
-    List2Items = ["ListItems"]
-    List3 = ("ListName")
-    List3Number = ["ListNumber"]
-    List3Items = ["ListItems"]
-    List4 = ("ListName")
-    List4Number = ["ListNumber"]
-    List4Items = ["ListItems"]
-    List5 = ("ListName")
-    List5Number = ["ListNumber"]
-    List5Items = ["ListItems"]
     time.sleep(3)
     Welcome()
 
@@ -487,9 +472,9 @@ def login(lgnfile_path):
     else:
         print("Please create an account")
     list1file = open("List1" + name + ".txt","r")
-    list1clear = [line.rstrip() for line in list1file]
+    list1clear = list1file.readline()
     if list1clear[0] != ("ListName"):
-        List1 = str(list1clear[0])
+        List1 = list1clear[0]
         List1Number = list1clear[1]
         List1Items = list1clear[2]
     else:
@@ -498,9 +483,9 @@ def login(lgnfile_path):
         List1Items = ["ListItems"]
     list1file.close
     list2file = open("List2" + name + ".txt","r")
-    list2clear = [line.rstrip() for line in list2file]
+    list2clear = list2file.readline()
     if list2clear[0] != ("ListName"):
-        List2 = str(list2clear[0])
+        List2 = list2clear[0]
         List2Number = list2clear[1]
         List2Items = list2clear[2]
     else:
@@ -509,9 +494,9 @@ def login(lgnfile_path):
         List2Items = ["ListItems"]
     list2file.close
     list3file = open("List3" + name + ".txt","r")
-    list3clear = [line.rstrip() for line in list3file]
+    list3clear = list3file.readline()
     if list3clear[0] != ("ListName"):
-        List3 = str(list3clear[0])
+        List3 = list3clear[0]
         List3Number = list3clear[1]
         List3Items = list3clear[2]
     else:
@@ -520,9 +505,9 @@ def login(lgnfile_path):
         List3Items = ["ListItems"]
     list3file.close
     list4file = open("List4" + name + ".txt","r")
-    list4clear = [line.rstrip() for line in list4file]
+    list4clear = list4file.readline()
     if list4clear[0] != ("ListName"):
-        List4 = str(list4clear[0])
+        List4 = list4clear[0]
         List4Number = list4clear[1]
         List4Items = list4clear[2]
     else:
@@ -531,9 +516,9 @@ def login(lgnfile_path):
         List4Items = ["ListItems"]
     list4file.close
     list5file = open("List5" + name + ".txt","r")
-    list5clear = [line.rstrip() for line in list5file]
+    list5clear = list5file.readline()
     if list5clear[0] != ("ListName"):
-        List5 = str(list5clear[0])
+        List5 = list5clear[0]
         List5Number = list5clear[1]
         List5Items = list5clear[2]
     else:
